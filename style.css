@@ -170,12 +170,13 @@ img{
     position:absolute;
     inset:0;
 
-    background:
-    linear-gradient(
-    180deg,
-    rgba(0,0,0,.2),
-    rgba(0,0,0,.7)
-    );
+   background:
+
+linear-gradient(
+180deg,
+#f4f0e8,
+#efe9de
+);
 
 }
 
@@ -467,6 +468,52 @@ img{
     display:flex;
     justify-content:center;
     gap:80px;
+
+}
+
+.location-wrapper{
+
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:60px;
+    align-items:center;
+
+}
+
+.italian-accent{
+
+display:flex;
+
+width:120px;
+height:4px;
+
+margin:auto;
+
+}
+
+.green{
+background:#008C45;
+flex:1;
+}
+
+.white{
+background:#F4F5F0;
+flex:1;
+}
+
+.red{
+background:#CD212A;
+flex:1;
+}
+
+.location-map iframe{
+
+    width:100%;
+    height:500px;
+
+    border:none;
+
+    border-radius:20px;
 
 }
 
