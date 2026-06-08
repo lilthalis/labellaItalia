@@ -15,12 +15,23 @@ html{
 :root{
 
     --cream:#F5F1EA;
-    --ivory:#ECE5DA;
-    --olive:#5E6B4A;
-    --wine:#4B1E24;
-    --gold:#B89B5E;
-    --charcoal:#111111;
-    --white:#ffffff;
+    --cream-dark:#E8E1D6;
+
+    --green:#304D3D;
+    --green-light:#466854;
+
+    --brick:#A35D3A;
+    --brick-light:#BC7350;
+
+    --wood:#4A3526;
+    --wood-dark:#2F2117;
+
+    --gold:#B48A4C;
+
+    --text:#1A1A1A;
+    --text-light:#666666;
+
+    --white:#FFFFFF;
 
 }
 
@@ -31,10 +42,52 @@ html{
 body{
 
     font-family:'Inter',sans-serif;
+
     background:var(--cream);
-    color:var(--charcoal);
+
+    color:var(--text);
+
     overflow-x:hidden;
-    line-height:1.7;
+
+    line-height:1.8;
+
+}
+
+section{
+
+    padding:140px 8%;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:90px;
+
+}
+
+.section-title span{
+
+    color:var(--brick);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+
+}
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    color:var(--wood);
+
+    margin-top:15px;
 
 }
 
@@ -81,44 +134,46 @@ img{
 .header{
 
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:25px 8%;
 
     z-index:1000;
 
-    background:rgba(0,0,0,.25);
-    backdrop-filter:blur(12px);
+    background:rgba(47,33,23,.55);
+
+    backdrop-filter:blur(15px);
 
 }
 
 .logo h1{
 
     font-family:'Cormorant Garamond',serif;
+
+    color:var(--cream);
+
     font-size:2rem;
-    color:white;
+
     letter-spacing:2px;
-
-}
-
-.navbar ul{
-
-    display:flex;
-    list-style:none;
-    gap:40px;
 
 }
 
 .navbar a{
 
+    color:var(--cream);
+
     text-decoration:none;
-    color:white;
+
     transition:.3s;
 
 }
@@ -126,17 +181,6 @@ img{
 .navbar a:hover{
 
     color:var(--gold);
-
-}
-
-.menu-mobile{
-
-    display:none;
-    background:none;
-    border:none;
-    color:white;
-    font-size:1.8rem;
-    cursor:pointer;
 
 }
 
@@ -236,44 +280,43 @@ img{
 /* ========================= */
 /* LINHA ITALIANA */
 /* ========================= */
-
 .italian-accent{
 
-    display: flex;
+    width:320px;
 
-    width: 160px;
+    height:8px;
 
-    height: 4px;
+    display:flex;
 
-    margin: 0 auto 60px;
+    margin:30px auto 60px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    overflow: hidden;
+    overflow:hidden;
 
 }
 
 .green{
 
-    flex: 1;
+    flex:1;
 
-    background: #008C45;
+    background:#008C45;
 
 }
 
 .white{
 
-    flex: 1;
+    flex:1;
 
-    background: #F4F5F0;
+    background:#F4F5F0;
 
 }
 
 .red{
 
-    flex: 1;
+    flex:1;
 
-    background: #CD212A;
+    background:#CD212A;
 
 }
 
@@ -376,20 +419,29 @@ img{
 .hero{
 
     position:relative;
+
     height:100vh;
+
     overflow:hidden;
 
     display:flex;
-    align-items:center;
+
     justify-content:center;
+
+    align-items:center;
 
 }
 
 .hero-video{
 
     position:absolute;
+
+    inset:0;
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
 
 }
@@ -397,93 +449,50 @@ img{
 .hero-overlay{
 
     position:absolute;
+
     inset:0;
 
-   background:
-
-linear-gradient(
-180deg,
-#f4f0e8,
-#efe9de
-);
+    background:
+    linear-gradient(
+        rgba(47,33,23,.55),
+        rgba(47,33,23,.70)
+    );
 
 }
 
 .hero-content{
 
     position:relative;
+
     z-index:2;
 
     text-align:center;
+
     color:white;
 
     max-width:900px;
 
 }
 
-.hero-tag{
-
-    letter-spacing:4px;
-    font-size:.8rem;
-
-}
-
 .hero-title{
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(4rem,8vw,8rem);
 
     line-height:1;
-    margin:20px 0;
+
+    margin-bottom:25px;
 
 }
 
 .hero-description{
 
     font-size:1.2rem;
-    opacity:.9;
 
-}
+    max-width:700px;
 
-.hero-buttons{
-
-    margin-top:40px;
-
-}
-
-.btn-primary{
-
-    display:inline-block;
-
-    padding:16px 36px;
-
-    background:var(--gold);
-
-    color:white;
-    text-decoration:none;
-
-    margin-right:15px;
-
-    transition:.4s;
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-5px);
-
-}
-
-.btn-secondary{
-
-    display:inline-block;
-
-    padding:16px 36px;
-
-    border:1px solid white;
-
-    color:white;
-    text-decoration:none;
+    margin:auto;
 
 }
 
@@ -534,7 +543,30 @@ linear-gradient(
 
 .experience{
 
-    background:var(--ivory);
+    background:var(--cream-dark);
+
+}
+
+.experience-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-10px);
 
 }
 
@@ -593,9 +625,18 @@ linear-gradient(
 
     background:white;
 
+    border-radius:20px;
+
     overflow:hidden;
 
-    border-radius:15px;
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+}
+
+.dish-content{
+
+    padding:30px;
 
 }
 
@@ -629,15 +670,26 @@ linear-gradient(
 .gallery-grid{
 
     columns:3;
-    column-gap:20px;
+
+    column-gap:25px;
 
 }
 
 .gallery-grid img{
 
     width:100%;
-    margin-bottom:20px;
-    border-radius:10px;
+
+    margin-bottom:25px;
+
+    border-radius:16px;
+
+    transition:.6s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.02);
 
 }
 
@@ -688,24 +740,60 @@ linear-gradient(
 
 .location{
 
+    background:var(--cream-dark);
+
     text-align:center;
 
 }
 
-.location-content{
+.location-photo{
 
-    display:flex;
-    justify-content:center;
-    gap:80px;
+    max-width:1200px;
+
+    margin:0 auto 60px;
 
 }
 
-.location-wrapper{
+.location-photo img{
 
-    display:grid;
-    grid-template-columns:1fr 1.2fr;
-    gap:60px;
-    align-items:center;
+    width:100%;
+
+    height:600px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.location-info{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.location-info h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    color:var(--wood);
+
+    margin-bottom:20px;
+
+}
+
+.location-info p{
+
+    font-size:1.1rem;
+
+    color:var(--text-light);
 
 }
 
@@ -749,57 +837,28 @@ flex:1;
 /* =========================
    FOOTER
 ========================= */
-
 .footer{
 
-    background:#111;
+    background:var(--wood-dark);
 
     color:white;
 
     text-align:center;
 
-    padding:100px 8%;
+    padding:120px 8%;
 
 }
 
 .footer h2{
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:3rem;
 
-}
-
-.footer-links{
-
-    display:flex;
-    justify-content:center;
-    gap:30px;
-
-    margin-top:30px;
+    margin-bottom:20px;
 
 }
-
-.footer-links a{
-
-    color:white;
-    text-decoration:none;
-
-}
-
-.footer-links a:hover{
-
-    color:var(--gold);
-
-}
-
-.footer-bottom{
-
-    margin-top:50px;
-    opacity:.6;
-
-}
-
-/* =========================
+========================
    RESPONSIVO
 ========================= */
 
