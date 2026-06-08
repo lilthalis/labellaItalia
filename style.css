@@ -1,0 +1,569 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --cream:#F5F1EA;
+    --ivory:#ECE5DA;
+    --olive:#5E6B4A;
+    --wine:#4B1E24;
+    --gold:#B89B5E;
+    --charcoal:#111111;
+    --white:#ffffff;
+
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    overflow-x:hidden;
+    line-height:1.7;
+
+}
+
+section{
+
+    padding:140px 8%;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:80px;
+
+}
+
+.section-title span{
+
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:.8rem;
+
+}
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:4rem;
+    margin-top:10px;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 8%;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(12px);
+
+}
+
+.logo h1{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:white;
+    letter-spacing:2px;
+
+}
+
+.navbar ul{
+
+    display:flex;
+    list-style:none;
+    gap:40px;
+
+}
+
+.navbar a{
+
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:var(--gold);
+
+}
+
+.menu-mobile{
+
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:1.8rem;
+    cursor:pointer;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.hero-video{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(0,0,0,.2),
+    rgba(0,0,0,.7)
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    color:white;
+
+    max-width:900px;
+
+}
+
+.hero-tag{
+
+    letter-spacing:4px;
+    font-size:.8rem;
+
+}
+
+.hero-title{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(4rem,8vw,8rem);
+
+    line-height:1;
+    margin:20px 0;
+
+}
+
+.hero-description{
+
+    font-size:1.2rem;
+    opacity:.9;
+
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+
+}
+
+.btn-primary{
+
+    display:inline-block;
+
+    padding:16px 36px;
+
+    background:var(--gold);
+
+    color:white;
+    text-decoration:none;
+
+    margin-right:15px;
+
+    transition:.4s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-secondary{
+
+    display:inline-block;
+
+    padding:16px 36px;
+
+    border:1px solid white;
+
+    color:white;
+    text-decoration:none;
+
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+.history{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.history img{
+
+    height:700px;
+    width:100%;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.history span{
+
+    color:var(--gold);
+    letter-spacing:3px;
+
+}
+
+.history h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:4rem;
+
+    margin:20px 0;
+
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience{
+
+    background:var(--ivory);
+
+}
+
+.experience-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.experience-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:12px;
+
+    transition:.4s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.experience-card h3{
+
+    font-size:2rem;
+    margin-bottom:15px;
+
+}
+
+/* =========================
+   DISHES
+========================= */
+
+.dishes-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:40px;
+
+}
+
+.dish-card{
+
+    background:white;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+.dish-card img{
+
+    width:100%;
+    height:350px;
+
+    object-fit:cover;
+
+    transition:.8s;
+
+}
+
+.dish-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.dish-content{
+
+    padding:25px;
+
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid{
+
+    columns:3;
+    column-gap:20px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+    margin-bottom:20px;
+    border-radius:10px;
+
+}
+
+/* =========================
+   RESERVATION
+========================= */
+
+.reservation{
+
+    position:relative;
+
+    background:url("../assets/images/reservation.jpg")
+    center center/cover;
+
+}
+
+.reservation-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+}
+
+.reservation-content{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    color:white;
+
+}
+
+.reservation h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+
+    margin:20px 0;
+
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+
+    text-align:center;
+
+}
+
+.location-content{
+
+    display:flex;
+    justify-content:center;
+    gap:80px;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 8%;
+
+}
+
+.footer h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+
+}
+
+.footer-links{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.footer-links a{
+
+    color:white;
+    text-decoration:none;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--gold);
+
+}
+
+.footer-bottom{
+
+    margin-top:50px;
+    opacity:.6;
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+    .history{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid{
+
+        columns:1;
+
+    }
+
+    .hero-title{
+
+        font-size:4rem;
+
+    }
+
+    .location-content{
+
+        flex-direction:column;
+        gap:30px;
+
+    }
+
+    .navbar{
+
+        display:none;
+
+    }
+
+    .menu-mobile{
+
+        display:block;
+
+    }
+
+}
