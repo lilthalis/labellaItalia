@@ -1,6 +1,7 @@
-/* =========================
+```css
+/* =======================================
    RESET
-========================= */
+======================================= */
 
 *{
     margin:0;
@@ -12,59 +13,63 @@ html{
     scroll-behavior:smooth;
 }
 
+body{
+    font-family:'Inter',sans-serif;
+    background:#F4F0E8;
+    color:#1A1A1A;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* =======================================
+   VARIÁVEIS
+======================================= */
+
 :root{
 
-    --cream:#F5F1EA;
-    --cream-dark:#E8E1D6;
+    --cream:#F4F0E8;
+    --cream-dark:#EAE2D5;
 
-    --green:#304D3D;
-    --green-light:#466854;
+    --brick:#8A4B35;
+    --brick-dark:#6D3827;
 
-    --brick:#A35D3A;
-    --brick-light:#BC7350;
+    --green:#2F4F3E;
+    --green-light:#4B6D5A;
 
-    --wood:#4A3526;
-    --wood-dark:#2F2117;
+    --wood:#3A2B22;
+    --wood-light:#594235;
 
-    --gold:#B48A4C;
-
-    --text:#1A1A1A;
-    --text-light:#666666;
+    --gold:#C8A96B;
 
     --white:#FFFFFF;
+    --black:#111111;
 
 }
 
-/* =========================
-   GLOBAL
-========================= */
-
-body{
-
-    font-family:'Inter',sans-serif;
-
-    background:var(--cream);
-
-    color:var(--text);
-
-    overflow-x:hidden;
-
-    line-height:1.8;
-
-}
+/* =======================================
+   SECTIONS
+======================================= */
 
 section{
-
     padding:140px 8%;
-
 }
 
 .section-title{
-
     text-align:center;
-
-    margin-bottom:90px;
-
+    margin-bottom:80px;
 }
 
 .section-title span{
@@ -73,9 +78,9 @@ section{
 
     letter-spacing:4px;
 
-    text-transform:uppercase;
+    font-size:.9rem;
 
-    font-size:.85rem;
+    text-transform:uppercase;
 
 }
 
@@ -91,45 +96,9 @@ section{
 
 }
 
-section{
-
-    padding:140px 8%;
-
-}
-
-img{
-
-    max-width:100%;
-    display:block;
-
-}
-
-.section-title{
-
-    text-align:center;
-    margin-bottom:80px;
-
-}
-
-.section-title span{
-
-    color:var(--gold);
-    letter-spacing:3px;
-    font-size:.8rem;
-
-}
-
-.section-title h2{
-
-    font-family:'Cormorant Garamond',serif;
-    font-size:4rem;
-    margin-top:10px;
-
-}
-
-/* =========================
+/* =======================================
    HEADER
-========================= */
+======================================= */
 
 .header{
 
@@ -150,9 +119,11 @@ img{
 
     z-index:1000;
 
-    background:rgba(47,33,23,.55);
+    background:rgba(58,43,34,.45);
 
     backdrop-filter:blur(15px);
+
+    transition:.4s;
 
 }
 
@@ -160,7 +131,7 @@ img{
 
     font-family:'Cormorant Garamond',serif;
 
-    color:var(--cream);
+    color:var(--white);
 
     font-size:2rem;
 
@@ -168,11 +139,19 @@ img{
 
 }
 
+.navbar ul{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
 .navbar a{
 
-    color:var(--cream);
+    color:white;
 
-    text-decoration:none;
+    font-size:.95rem;
 
     transition:.3s;
 
@@ -184,111 +163,355 @@ img{
 
 }
 
-/* ========================= */
-/* PAINEL FULLSCREEN LUXURY */
-/* ========================= */
+.menu-mobile{
 
-.panel{
+    display:none;
 
-    position: fixed;
+    background:none;
 
-    top: 0;
-    left: 0;
+    border:none;
 
-    width: 100%;
-    height: 100vh;
+    color:white;
 
-    background: linear-gradient(
-        180deg,
-        #0f0f0f 0%,
-        #1a1a1a 100%
-    );
+    font-size:2rem;
 
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    clip-path: polygon(
-        0 0,
-        0 0,
-        0 100%,
-        0 100%
-    );
-
-    overflow: hidden;
+    cursor:pointer;
 
 }
 
-/* ========================= */
-/* CONTEÚDO */
-/* ========================= */
+/* =======================================
+   HERO
+======================================= */
 
-.panel-content{
+.hero{
 
-    text-align: center;
+    position:relative;
 
-    color: #fff;
+    height:100vh;
 
-    max-width: 900px;
-
-    padding: 40px;
-
-}
-
-/* ========================= */
-/* TÍTULO */
-/* ========================= */
-
-.panel-content h2{
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(4rem, 8vw, 7rem);
-
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 20px;
-
-    color: #f5f5f5;
-
-}
-
-/* ========================= */
-/* TEXTO */
-/* ========================= */
-
-.panel-content p{
-
-    font-family: 'Montserrat', sans-serif;
-
-    font-size: 1rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 4px;
-
-    color: rgba(255,255,255,0.7);
-
-    margin-bottom: 60px;
-
-}
-
-/* ========================= */
-/* LINHA ITALIANA */
-/* ========================= */
-.italian-accent{
-
-    width:320px;
-
-    height:8px;
+    overflow:hidden;
 
     display:flex;
 
-    margin:30px auto 60px;
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(58,43,34,.55),
+
+        rgba(58,43,34,.75)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    max-width:900px;
+
+}
+
+.hero-tag{
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+
+    color:var(--gold);
+
+}
+
+.hero-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(4rem,9vw,8rem);
+
+    line-height:1;
+
+    margin:20px 0;
+
+}
+
+.hero-description{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:1.2rem;
+
+    opacity:.95;
+
+}
+
+/* =======================================
+   BOTÕES
+======================================= */
+
+.hero-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.btn-primary{
+
+    padding:18px 40px;
+
+    background:var(--brick);
+
+    color:white;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--green);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-secondary{
+
+    padding:18px 40px;
+
+    border:1px solid rgba(255,255,255,.5);
+
+    color:white;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:var(--wood);
+
+}
+
+```css
+/* =======================================
+   HISTÓRIA
+======================================= */
+
+.history{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    background:var(--cream);
+
+}
+
+.history-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.history-image img{
+
+    width:100%;
+
+    height:700px;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+.history-image:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.history-content span{
+
+    color:var(--brick);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+}
+
+.history-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    color:var(--wood);
+
+    margin:20px 0;
+
+    line-height:1.1;
+
+}
+
+.history-content p{
+
+    margin-bottom:20px;
+
+    color:#555;
+
+    font-size:1.05rem;
+
+}
+
+/* =======================================
+   EXPERIÊNCIA
+======================================= */
+
+.experience{
+
+    background:var(--cream-dark);
+
+}
+
+.experience-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.experience-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.06);
+
+    transition:.5s;
+
+    border:1px solid rgba(0,0,0,.04);
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.experience-card h3{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.experience-card h4{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    color:var(--wood);
+
+    margin-bottom:15px;
+
+}
+
+.experience-card p{
+
+    color:#666;
+
+}
+
+/* =======================================
+   DIVISOR ITALIANO
+======================================= */
+
+.italian-accent{
+
+    display:flex;
+
+    width:300px;
+
+    height:8px;
+
+    margin:40px auto;
 
     border-radius:999px;
 
@@ -320,295 +543,27 @@ img{
 
 }
 
-/* ========================= */
-/* LINKS MENU */
-/* ========================= */
+/* =======================================
+   ANIMAÇÃO SUAVE
+======================================= */
 
-.panel-links{
+.experience-card,
+.history-image{
 
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 25px;
+    will-change:transform;
 
 }
 
-.panel-links a{
+```css
+/* =======================================
+   PRATOS
+======================================= */
 
-    text-decoration: none;
+.dishes{
 
-    color: white;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(2rem, 4vw, 4rem);
-
-    transition: all .4s ease;
+    background:var(--cream);
 
 }
-
-.panel-links a:hover{
-
-    transform: translateX(15px);
-
-    color: #d4af37;
-
-}
-
-/* ========================= */
-/* BOTÃO FECHAR */
-/* ========================= */
-
-.close-panel{
-
-    position: absolute;
-
-    top: 40px;
-
-    right: 50px;
-
-    color: white;
-
-    font-size: 2rem;
-
-    cursor: pointer;
-
-    transition: .3s;
-
-}
-
-.close-panel:hover{
-
-    transform: rotate(90deg);
-
-    color: #d4af37;
-
-}
-
-/* ========================= */
-/* RESPONSIVO */
-/* ========================= */
-
-@media(max-width:768px){
-
-    .panel-content h2{
-
-        font-size: 3.5rem;
-
-    }
-
-    .panel-content p{
-
-        letter-spacing: 2px;
-
-    }
-
-    .panel-links a{
-
-        font-size: 2rem;
-
-    }
-
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    position:relative;
-
-    height:100vh;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.hero-video{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        rgba(47,33,23,.55),
-        rgba(47,33,23,.70)
-    );
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-
-    color:white;
-
-    max-width:900px;
-
-}
-
-.hero-title{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(4rem,8vw,8rem);
-
-    line-height:1;
-
-    margin-bottom:25px;
-
-}
-
-.hero-description{
-
-    font-size:1.2rem;
-
-    max-width:700px;
-
-    margin:auto;
-
-}
-
-/* =========================
-   HISTORY
-========================= */
-
-.history{
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-
-    align-items:center;
-
-}
-
-.history img{
-
-    height:700px;
-    width:100%;
-
-    object-fit:cover;
-
-    border-radius:12px;
-
-}
-
-.history span{
-
-    color:var(--gold);
-    letter-spacing:3px;
-
-}
-
-.history h2{
-
-    font-family:'Cormorant Garamond',serif;
-    font-size:4rem;
-
-    margin:20px 0;
-
-}
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.experience{
-
-    background:var(--cream-dark);
-
-}
-
-.experience-card{
-
-    background:white;
-
-    padding:50px;
-
-    border-radius:20px;
-
-    border:1px solid rgba(0,0,0,.05);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.08);
-
-    transition:.4s;
-
-}
-
-.experience-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.experience-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:30px;
-
-}
-
-.experience-card{
-
-    background:white;
-
-    padding:50px;
-
-    border-radius:12px;
-
-    transition:.4s;
-
-}
-
-.experience-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.experience-card h3{
-
-    font-size:2rem;
-    margin-bottom:15px;
-
-}
-
-/* =========================
-   DISHES
-========================= */
 
 .dishes-grid{
 
@@ -625,29 +580,35 @@ img{
 
     background:white;
 
-    border-radius:20px;
+    border-radius:24px;
 
     overflow:hidden;
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.08);
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.5s;
 
 }
 
-.dish-content{
+.dish-card:hover{
 
-    padding:30px;
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.14);
 
 }
 
 .dish-card img{
 
     width:100%;
-    height:350px;
+
+    height:380px;
 
     object-fit:cover;
 
-    transition:.8s;
+    transition:1s;
 
 }
 
@@ -659,19 +620,45 @@ img{
 
 .dish-content{
 
-    padding:25px;
+    padding:30px;
 
 }
 
-/* =========================
-   GALLERY
-========================= */
+.dish-content h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    color:var(--wood);
+
+    margin-bottom:10px;
+
+}
+
+.dish-content p{
+
+    color:#666;
+
+    font-size:1rem;
+
+}
+
+/* =======================================
+   GALERIA
+======================================= */
+
+.gallery{
+
+    background:var(--cream-dark);
+
+}
 
 .gallery-grid{
 
     columns:3;
 
-    column-gap:25px;
+    column-gap:24px;
 
 }
 
@@ -679,68 +666,106 @@ img{
 
     width:100%;
 
-    margin-bottom:25px;
+    margin-bottom:24px;
 
-    border-radius:16px;
+    border-radius:20px;
 
-    transition:.6s;
+    transition:.8s;
+
+    cursor:pointer;
 
 }
 
 .gallery-grid img:hover{
 
-    transform:scale(1.02);
+    transform:scale(1.03);
+
+    filter:brightness(1.05);
 
 }
 
-/* =========================
-   RESERVATION
-========================= */
+/* =======================================
+   ESTILO EDITORIAL
+======================================= */
 
-.reservation{
+.gallery-grid img:nth-child(1){
 
-    position:relative;
+    height:500px;
 
-    background:url("../assets/images/reservation.jpg")
-    center center/cover;
-
-}
-
-.reservation-overlay{
-
-    position:absolute;
-    inset:0;
-
-    background:rgba(0,0,0,.65);
+    object-fit:cover;
 
 }
 
-.reservation-content{
+.gallery-grid img:nth-child(2){
 
-    position:relative;
-    z-index:2;
+    height:700px;
 
-    text-align:center;
-    color:white;
+    object-fit:cover;
 
 }
 
-.reservation h2{
+.gallery-grid img:nth-child(3){
 
-    font-family:'Cormorant Garamond',serif;
-    font-size:5rem;
+    height:450px;
 
-    margin:20px 0;
+    object-fit:cover;
 
 }
 
-/* =========================
-   LOCATION
-========================= */
+.gallery-grid img:nth-child(4){
+
+    height:650px;
+
+    object-fit:cover;
+
+}
+
+.gallery-grid img:nth-child(5){
+
+    height:550px;
+
+    object-fit:cover;
+
+}
+
+.gallery-grid img:nth-child(6){
+
+    height:750px;
+
+    object-fit:cover;
+
+}
+
+/* =======================================
+   EFEITO PREMIUM
+======================================= */
+
+.gallery-grid img{
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+}
+
+/* =======================================
+   TRANSIÇÕES
+======================================= */
+
+.dish-card,
+.gallery-grid img{
+
+    will-change:transform;
+
+}
+
+```css id="1qj2z7"
+/* =======================================
+   LOCALIZAÇÃO
+======================================= */
 
 .location{
 
-    background:var(--cream-dark);
+    background:var(--cream);
 
     text-align:center;
 
@@ -748,9 +773,9 @@ img{
 
 .location-photo{
 
-    max-width:1200px;
+    max-width:1300px;
 
-    margin:0 auto 60px;
+    margin:0 auto 80px;
 
 }
 
@@ -758,88 +783,140 @@ img{
 
     width:100%;
 
-    height:600px;
+    height:700px;
 
     object-fit:cover;
 
     border-radius:24px;
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,.15);
+    0 20px 60px rgba(0,0,0,.12);
 
 }
 
 .location-info{
 
-    max-width:700px;
+    max-width:800px;
 
     margin:auto;
 
 }
 
-.location-info h3{
+.location-info span{
+
+    color:var(--brick);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+}
+
+.location-info h2{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:4rem;
+    font-size:clamp(3rem,6vw,5rem);
 
     color:var(--wood);
 
-    margin-bottom:20px;
+    margin:20px 0;
 
 }
 
 .location-info p{
 
+    color:#666;
+
+    margin-bottom:20px;
+
     font-size:1.1rem;
 
-    color:var(--text-light);
-
 }
 
-.italian-accent{
+/* =======================================
+   RESERVAS
+======================================= */
 
-display:flex;
+.reservation{
 
-width:120px;
-height:4px;
-
-margin:auto;
-
-}
-
-.green{
-background:#008C45;
-flex:1;
-}
-
-.white{
-background:#F4F5F0;
-flex:1;
-}
-
-.red{
-background:#CD212A;
-flex:1;
-}
-
-.location-map iframe{
-
-    width:100%;
-    height:500px;
-
-    border:none;
-
-    border-radius:20px;
-
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer{
+    position:relative;
 
     background:var(--wood-dark);
+
+    overflow:hidden;
+
+}
+
+.reservation-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+.reservation-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.reservation-content span{
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+.reservation-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    margin:20px 0;
+
+}
+
+.reservation-content p{
+
+    margin-bottom:40px;
+
+    font-size:1.1rem;
+
+    opacity:.9;
+
+}
+
+/* =======================================
+   FOOTER
+======================================= */
+
+.footer{
+
+    background:#241A14;
 
     color:white;
 
@@ -855,37 +932,89 @@ flex:1;
 
     font-size:3rem;
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
-========================
-   RESPONSIVO
-========================= */
 
-@media(max-width:900px){
+.footer p{
+
+    opacity:.8;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.footer-links a{
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--gold);
+
+}
+
+.footer-bottom{
+
+    margin-top:60px;
+
+    opacity:.5;
+
+    font-size:.9rem;
+
+}
+
+/* =======================================
+   RESPONSIVO TABLET
+======================================= */
+
+@media(max-width:992px){
 
     .history{
 
         grid-template-columns:1fr;
 
+        gap:50px;
+
+    }
+
+    .history-image img{
+
+        height:500px;
+
     }
 
     .gallery-grid{
 
-        columns:1;
+        columns:2;
 
     }
 
-    .hero-title{
+}
 
-        font-size:4rem;
+/* =======================================
+   RESPONSIVO MOBILE
+======================================= */
 
-    }
+@media(max-width:768px){
 
-    .location-content{
+    section{
 
-        flex-direction:column;
-        gap:30px;
+        padding:100px 6%;
 
     }
 
@@ -900,5 +1029,87 @@ flex:1;
         display:block;
 
     }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .hero-title{
+
+        font-size:4rem;
+
+    }
+
+    .history-image img{
+
+        height:400px;
+
+    }
+
+    .gallery-grid{
+
+        columns:1;
+
+    }
+
+    .location-photo img{
+
+        height:400px;
+
+    }
+
+    .footer-links{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+}
+
+/* =======================================
+   SCROLLBAR PREMIUM
+======================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--brick);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--green);
+
+}
+
+/* =======================================
+   SELEÇÃO DE TEXTO
+======================================= */
+
+::selection{
+
+    background:var(--gold);
+
+    color:white;
 
 }
