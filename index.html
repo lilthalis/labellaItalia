@@ -1,438 +1,206 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Bella Italia | Alta Gastronomia em Palmas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="La Bella Italia — alta gastronomia italiana em Palmas, Paraná, com atmosfera de luxo editorial, tradição artesanal e experiências inesquecíveis.">
+    <title>La Bella Italia | Luxury Italian Dining in Palmas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brickBrown: '#8A4B35',
-                        forestGreen: '#2F4F3E',
-                        creamIvory: '#F4F0E8',
-                        darkWood: '#3A2B22',
-                        softGold: '#C8A96B',
-                        darkOverlay: '#120D0A'
-                    },
-                    fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #F4F0E8;
-            color: #3A2B22;
-            overflow-x: hidden;
-        }
-        .luxury-gradient {
-            background: linear-gradient(180deg, rgba(18,13,10,0.8) 0%, rgba(18,13,10,0.4) 50%, rgba(18,13,10,0.9) 100%);
-        }
-        /* Custom smooth scroll reveal placeholder classes */
-        .reveal-hidden { opacity: 0; transform: translateY(40px); pointer-events: none; }
-        .line-flag {
-            height: 1px;
-            background: linear-gradient(90deg, #2F4F3E 0%, #2F4F3E 33%, #F4F0E8 33%, #F4F0E8 66%, #8A4B35 66%, #8A4B35 100%);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
-<body class="font-sans antialiased selection:bg-softGold selection:text-darkWood">
+<body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
 
-    <div class="w-full h-[3px] fixed top-0 left-0 z-50 flex">
-        <div class="w-1/3 bg-forestGreen h-full"></div>
-        <div class="w-1/3 bg-creamIvory h-full"></div>
-        <div class="w-1/3 bg-brickBrown h-full"></div>
-    </div>
-
-    <nav class="fixed w-full z-40 bg-darkOverlay/80 backdrop-blur-md border-b border-softGold/10 transition-all duration-500 py-6 px-6 md:px-16 flex justify-between items-center text-creamIvory">
-        <a href="#" class="font-serif text-xl md:text-2xl tracking-[0.2em] uppercase hover:text-softGold transition-colors duration-300">
-            La Bella Italia
+    <header class="site-header" data-header>
+        <a class="brand" href="#hero" aria-label="La Bella Italia home">
+            <span class="brand-mark">LBI</span>
+            <span class="brand-name">La Bella Italia</span>
         </a>
-        <div class="hidden md:flex space-x-8 text-xs tracking-[0.3em] uppercase font-light">
-            <a href="#story" class="hover:text-softGold transition-colors py-2 relative group">História<span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold transition-all group-hover:w-full"></span></a>
-            <a href="#experience" class="hover:text-softGold transition-colors py-2 relative group">A Experiência<span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold transition-all group-hover:w-full"></span></a>
-            <a href="#dishes" class="hover:text-softGold transition-colors py-2 relative group">Pratos Próprios<span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold transition-all group-hover:w-full"></span></a>
-            <a href="#reservation" class="hover:text-softGold transition-colors py-2 relative group">Reservas<span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold transition-all group-hover:w-full"></span></a>
-        </div>
-        <div>
-            <a href="#reservation" class="border border-softGold text-softGold hover:bg-softGold hover:text-darkWood transition-all duration-500 px-6 py-2.5 text-xs tracking-[0.2em] uppercase font-medium">
-                Reservar
-            </a>
-        </div>
-    </nav>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+            <a href="#story">Story</a>
+            <a href="#experience">Experience</a>
+            <a href="#dishes">Cuisine</a>
+            <a href="#visit">Visit</a>
+        </nav>
+        <a class="header-reserve magnetic" href="#reservation">Reserve</a>
+    </header>
 
-    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-darkOverlay">
-        <video class="absolute top-0 left-0 w-full h-full object-cover opacity-60 scale-105" autoplay loop muted playsinline>
-            <source src="https://player.vimeo.com/external/435674703.sd.mp4?s=7fdf7f1118fa3023fbafbf649491e3e7f975ee38&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 luxury-gradient"></div>
-
-        <div class="relative z-10 text-center max-w-5xl px-4 flex flex-col items-center">
-            <div class="flex items-center space-x-3 mb-6 tracking-[0.4em] uppercase text-xs text-softGold/80 font-light">
-                <span class="w-2 h-2 rounded-full bg-forestGreen"></span>
-                <span>Toscana encontra o Sul do Brasil</span>
-                <span class="w-2 h-2 rounded-full bg-brickBrown"></span>
+    <main>
+        <section class="hero section-dark" id="hero" aria-label="Hero video">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85">
+                <source src="https://cdn.coverr.co/videos/coverr-serving-a-delicious-pasta-5054/1080p.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="heritage-ribbon" aria-label="Italian heritage accent">
+                <span class="green"></span><span class="ivory"></span><span class="red"></span>
             </div>
-            
-            <h1 class="font-serif text-4xl sm:text-6xl md:text-8xl text-creamIvory tracking-[0.1em] mb-6 leading-tight select-none" id="hero-title">
-                La Tradizione <br><span class="italic font-light text-softGold">Italiana</span> Vive Aqui
-            </h1>
-            
-            <p class="text-creamIvory/80 max-w-xl text-sm md:text-base tracking-wide font-light leading-relaxed mb-12 font-sans" id="hero-subtitle">
-                Authentic Italian cuisine, handcrafted recipes and unforgettable culinary experiences in the heart of Palmas, Paraná.
-            </p>
-
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto" id="hero-buttons">
-                <a href="#dishes" class="bg-softGold text-darkWood hover:bg-creamIvory hover:text-darkWood transition-all duration-500 px-8 py-4 text-xs tracking-[0.3em] uppercase font-semibold text-center shadow-lg">
-                    Menu Assinado
-                </a>
-                <a href="#reservation" class="border border-creamIvory/40 text-creamIvory hover:border-softGold hover:text-softGold transition-all duration-500 px-8 py-4 text-xs tracking-[0.3em] uppercase font-semibold text-center backdrop-blur-sm">
-                    Reservar Mesa
-                </a>
+            <div class="hero-content">
+                <p class="eyebrow hero-kicker reveal-hero">Palmas, Paraná · Casa Italiana Contemporanea</p>
+                <h1 class="hero-title reveal-hero">La Tradizione <em>Italiana</em> Vive Aqui</h1>
+                <p class="hero-subtitle reveal-hero">Authentic Italian cuisine, handcrafted recipes and unforgettable experiences in the heart of Palmas.</p>
+                <div class="hero-actions reveal-hero">
+                    <a class="button button-primary magnetic" href="#dishes">View Menu</a>
+                    <a class="button button-secondary magnetic" href="#reservation">Reserve a Table</a>
+                </div>
             </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center opacity-70 animate-bounce">
-            <span class="text-[9px] tracking-[0.4em] uppercase text-creamIvory mb-2">Descubra</span>
-            <i data-lucide="chevron-down" class="text-softGold w-4 h-4"></i>
-        </div>
-    </section>
-
-    <section id="story" class="py-24 md:py-40 px-6 md:px-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-        <div class="lg:col-span-5 space-y-8 reveal-hidden" id="story-text">
-            <div class="space-y-2">
-                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-brickBrown block">Il Racconto</span>
-                <h2 class="font-serif text-3xl md:text-5xl tracking-wide text-darkWood">Nossa História</h2>
-                <div class="w-12 h-[1px] bg-softGold mt-4"></div>
+            <div class="hero-footer reveal-hero">
+                <span>Handmade pasta</span>
+                <span>Slow dining</span>
+                <span>Italian wine ritual</span>
             </div>
-            <p class="text-sm md:text-base font-light leading-relaxed text-darkWood/80 text-justify">
-                Nascido sob a inspiração das alfaiatarias de Milão e do calor rústico das colinas da Toscana, o <span class="font-medium text-darkWood">La Bella Italia</span> traz para Palmas um novo conceito de alta gastronomia. Cada prato conta uma história de herança familiar, costurada com rigor técnico e ingredientes puros importados.
-            </p>
-            <p class="text-sm md:text-base font-light leading-relaxed text-darkWood/80 text-justify">
-                Não servimos apenas jantares; orquestramos momentos onde o tempo desacelera. Das massas artesanais abertas manualmente ao amanhecer, à curadoria de vinhos exclusivos, honramos a tradição impecável do país da bota.
-            </p>
+        </section>
+
+        <section class="story section-ivory" id="story">
+            <div class="section-number">01</div>
+            <div class="story-grid container">
+                <div class="story-copy reveal-up">
+                    <p class="eyebrow">Our Story</p>
+                    <h2>Uma casa para a elegância italiana, feita à mão em Palmas.</h2>
+                    <p>La Bella Italia imagines the warmth of a Tuscan villa through the precision of Milanese tailoring: fresh pasta rolled daily, sauces reduced slowly, candles glowing against dark wood and service choreographed with quiet confidence.</p>
+                    <p>Every table is designed like an editorial scene — tactile linens, soft gold reflections, brick-brown warmth and forest-green depth — creating a dining ritual that feels personal, cinematic and unmistakably Italian.</p>
+                    <div class="signature-line">
+                        <span></span>
+                        <strong>Famiglia, fuoco e finezza</strong>
+                    </div>
+                </div>
+                <div class="story-media reveal-image">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=85" alt="Chef preparing handmade Italian pasta in a warm kitchen">
+                    <div class="floating-card">
+                        <span>Since</span>
+                        <strong>Palmas</strong>
+                        <small>Paraná · Brasil</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience section-dark" id="experience">
+            <div class="parallax-bg" data-parallax style="background-image: url('https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=1800&q=85');"></div>
+            <div class="section-shade"></div>
+            <div class="container experience-content">
+                <p class="eyebrow reveal-up">Italian Experience</p>
+                <h2 class="reveal-up">The ceremony of Tuscany with the confidence of Milan.</h2>
+                <div class="experience-cards">
+                    <article class="experience-card reveal-up">
+                        <span>01</span>
+                        <h3>La Pasta Fresca</h3>
+                        <p>Silky ribbons, filled pastas and gnocchi prepared with a slow, artisanal rhythm.</p>
+                    </article>
+                    <article class="experience-card reveal-up">
+                        <span>02</span>
+                        <h3>Il Vino</h3>
+                        <p>Elegant pours, cellar-inspired pairings and glassware that turns dinner into ritual.</p>
+                    </article>
+                    <article class="experience-card reveal-up">
+                        <span>03</span>
+                        <h3>La Tavola</h3>
+                        <p>Warm lights, polished service and intimate tables designed for unforgettable nights.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="dishes section-ivory" id="dishes">
+            <div class="section-number">03</div>
+            <div class="container">
+                <div class="section-heading reveal-up">
+                    <p class="eyebrow">Signature Dishes</p>
+                    <h2>Menus that feel tailored, plated with couture precision.</h2>
+                </div>
+                <div class="dish-grid">
+                    <article class="dish-card reveal-up">
+                        <div class="dish-image reveal-image"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1000&q=85" alt="Tagliolini with truffle and parmesan"></div>
+                        <div class="dish-meta">
+                            <span>Signature</span>
+                            <h3>Tagliolini al Tartufo</h3>
+                            <p>Fresh pasta, clarified butter, Parmigiano Reggiano and black truffle shaved tableside.</p>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal-up stagger-mid">
+                        <div class="dish-image reveal-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85" alt="Elegant beef dish with wine reduction"></div>
+                        <div class="dish-meta">
+                            <span>Fuoco</span>
+                            <h3>Filetto di Manzo e Brunello</h3>
+                            <p>Charred filet, Brunello-inspired reduction, smoked mandioquinha and rosemary oil.</p>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal-up">
+                        <div class="dish-image reveal-image"><img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=1000&q=85" alt="Creamy seafood risotto with herbs"></div>
+                        <div class="dish-meta">
+                            <span>Mare</span>
+                            <h3>Risotto Gamberi e Limone</h3>
+                            <p>Aged rice, coastal prawns, Sicilian lemon perfume, saffron and cold-pressed olive oil.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery section-dark" id="gallery">
+            <div class="container editorial-grid">
+                <div class="gallery-copy reveal-up">
+                    <p class="eyebrow">Editorial Gallery</p>
+                    <h2>Every frame is warm light, quiet luxury and Italian appetite.</h2>
+                    <div class="italian-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+                <figure class="gallery-tall reveal-image"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=85" alt="Luxury restaurant interior with warm lighting"></figure>
+                <figure class="gallery-wide reveal-image"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=85" alt="Fine dining Italian plating"></figure>
+                <figure class="gallery-small reveal-image"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=85" alt="Wine bottles in an elegant cellar"></figure>
+            </div>
+        </section>
+
+        <section class="reservation section-ivory" id="reservation">
+            <div class="reservation-card reveal-up">
+                <p class="eyebrow">Reservation</p>
+                <h2>Reserve uma noite desenhada para permanecer na memória.</h2>
+                <p>For intimate dinners, celebrations or business tables, our team curates the cadence of the evening with refined Italian hospitality.</p>
+                <form class="reservation-form" aria-label="Reservation form concept">
+                    <label><span>Name</span><input type="text" placeholder="Your name"></label>
+                    <label><span>Date</span><input type="date"></label>
+                    <label><span>Guests</span><select><option>2 guests</option><option>4 guests</option><option>6 guests</option><option>Private table</option></select></label>
+                    <button class="button button-primary magnetic" type="button">Reserve a Table</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="visit section-dark" id="visit">
+            <div class="visit-image reveal-image">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=85" alt="Large cinematic view of a warmly lit restaurant dining room">
+            </div>
+            <div class="visit-panel reveal-up">
+                <p class="eyebrow">Visit Us</p>
+                <h2>Rua Bispo Dom Carlos, 710</h2>
+                <address>Centro - Palmas, Paraná</address>
+                <div class="hours">
+                    <span>Monday to Saturday</span>
+                    <strong>11:30 AM – 1:30 PM</strong>
+                    <strong>6:00 PM – 11:00 PM</strong>
+                </div>
+                <a class="button button-secondary magnetic" href="https://www.google.com/maps/search/?api=1&query=Rua%20Bispo%20Dom%20Carlos%20710%20Centro%20Palmas%20Paran%C3%A1" target="_blank" rel="noopener">Open in Google Maps</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer section-dark">
+        <div class="container footer-grid">
             <div>
-                <span class="font-serif italic text-xl text-brickBrown block">Elegância se serve à mesa.</span>
+                <span class="brand-mark">LBI</span>
+                <h2>La Bella Italia</h2>
             </div>
-        </div>
-
-        <div class="lg:col-span-7 grid grid-cols-12 gap-4 relative">
-            <div class="absolute -inset-4 border border-softGold/20 translate-x-4 translate-y-4 pointer-events-none z-0 hidden md:block"></div>
-            <div class="col-span-7 overflow-hidden shadow-2xl relative z-10 group reveal-hidden" id="story-img-1">
-                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Artesanal Pasta" class="w-full h-[300px] md:h-[450px] object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100">
-            </div>
-            <div class="col-span-5 overflow-hidden shadow-2xl mt-12 relative z-10 group reveal-hidden" id="story-img-2">
-                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Italian Fine Wine" class="w-full h-[250px] md:h-[380px] object-cover filter sepia-[0.2] transition-all duration-1000 scale-100 hover:scale-110">
-            </div>
-        </div>
-    </section>
-
-    <div class="line-flag max-w-7xl mx-auto opacity-40"></div>
-
-    <section id="experience" class="relative my-12 py-32 md:py-48 bg-darkWood overflow-hidden flex items-center justify-center">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20 scale-110" id="parallax-bg"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-darkWood via-transparent to-darkWood"></div>
-        
-        <div class="relative z-10 text-center max-w-3xl px-6 space-y-6">
-            <span class="text-xs tracking-[0.4em] uppercase text-softGold block">Atmosfera de Alta Moda</span>
-            <h3 class="font-serif text-3xl md:text-5xl text-creamIvory tracking-widest leading-snug">
-                "Simplicidade é o último grau de sofisticação."
-            </h3>
-            <p class="font-light italic text-creamIvory/60 text-sm md:text-base">— Leonardo da Vinci</p>
-        </div>
-    </section>
-
-    <section id="dishes" class="py-24 md:py-32 px-6 md:px-16 bg-creamIvory">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center space-y-4 mb-20 reveal-hidden" id="dishes-header">
-                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-forestGreen block">Il Menu Eccellente</span>
-                <h2 class="font-serif text-3xl md:text-5xl text-darkWood">Pratos Assinados</h2>
-                <p class="text-xs md:text-sm tracking-[0.1em] font-light text-darkWood/60 max-w-md mx-auto">Uma curadoria sazonal inspirada no minimalismo luxuoso das grandes capitais gastronômicas da Itália.</p>
-                <div class="flex justify-center space-x-1 pt-4">
-                    <span class="w-6 h-[1px] bg-forestGreen"></span>
-                    <span class="w-6 h-[1px] bg-creamIvory"></span>
-                    <span class="w-6 h-[1px] bg-brickBrown"></span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-                <div class="group space-y-6 reveal-hidden" id="dish-1">
-                    <div class="overflow-hidden bg-darkWood shadow-xl relative aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=80" alt="Tartufo Pasta" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100">
-                        <div class="absolute top-4 right-4 bg-darkWood/80 backdrop-blur-md text-softGold px-3 py-1 text-xs tracking-widest font-light border border-softGold/20">
-                            R$ 135
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between items-baseline">
-                            <h4 class="font-serif text-lg tracking-wider text-darkWood group-hover:text-brickBrown transition-colors duration-300">Tagliolini al Tartufo</h4>
-                        </div>
-                        <p class="text-xs md:text-sm font-light text-darkWood/70 leading-relaxed">
-                            Massa fresca feita em casa, manteiga normanda clarificada, trufas negras frescas laminadas diretamente à mesa.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="group space-y-6 md:translate-y-8 reveal-hidden" id="dish-2">
-                    <div class="overflow-hidden bg-darkWood shadow-xl relative aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Filetto d'Oro" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100">
-                        <div class="absolute top-4 right-4 bg-darkWood/80 backdrop-blur-md text-softGold px-3 py-1 text-xs tracking-widest font-light border border-softGold/20">
-                            R$ 168
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between items-baseline">
-                            <h4 class="font-serif text-lg tracking-wider text-darkWood group-hover:text-brickBrown transition-colors duration-300">Filetto di Manzo e Brunello</h4>
-                        </div>
-                        <p class="text-xs md:text-sm font-light text-darkWood/70 leading-relaxed">
-                            Filé mignon nobre grelhado na brasa, redução aveludada do renomado vinho Brunello di Montalcino, purê de mandioquinha defumada.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="group space-y-6 reveal-hidden" id="dish-3">
-                    <div class="overflow-hidden bg-darkWood shadow-xl relative aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80" alt="Premium Risotto" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100">
-                        <div class="absolute top-4 right-4 bg-darkWood/80 backdrop-blur-md text-softGold px-3 py-1 text-xs tracking-widest font-light border border-softGold/20">
-                            R$ 110
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between items-baseline">
-                            <h4 class="font-serif text-lg tracking-wider text-darkWood group-hover:text-brickBrown transition-colors duration-300">Risotto ai Gamberi e Limone</h4>
-                        </div>
-                        <p class="text-xs md:text-sm font-light text-darkWood/70 leading-relaxed">
-                            Arroz Acquerello envelhecido, camarões rosa da costa brasileira salteados, perfume de limão siciliano orgânico e açafrão em pistilos.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-darkWood text-creamIvory overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="md:col-span-2 space-y-4 flex flex-col justify-center pr-0 md:pr-12 mb-8 md:mb-0 reveal-hidden" id="gallery-info">
-                <span class="text-xs tracking-[0.3em] uppercase text-softGold">Galeria Editorial</span>
-                <h3 class="font-serif text-3xl md:text-4xl tracking-wide leading-tight">Visualidade Expressiva e Haute Cuisine</h3>
-                <p class="text-xs md:text-sm font-light text-creamIvory/60 leading-relaxed">Uma ode estética aos detalhes: os veios de mármore do nosso bar, a lapidação precisa do cristal e o contraste elegante das luzes quentes.</p>
-            </div>
-            <div class="overflow-hidden relative h-[300px] md:h-[400px] group reveal-hidden" id="gallery-img-1">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Restaurant Interior" class="w-full h-full object-cover filter contrast-125 duration-700 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden relative h-[300px] md:h-[400px] group reveal-hidden" id="gallery-img-2">
-                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80" alt="Sommelier Detail" class="w-full h-full object-cover filter brightness-90 duration-700 group-hover:scale-105">
-            </div>
-        </div>
-    </section>
-
-    <section id="reservation" class="py-24 md:py-36 bg-creamIvory relative px-6 md:px-16">
-        <div class="max-w-3xl mx-auto bg-darkWood text-creamIvory p-8 md:p-16 shadow-2xl relative z-10 border border-softGold/20 reveal-hidden" id="reservation-card">
-            <div class="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-softGold"></div>
-            <div class="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-softGold"></div>
-
-            <div class="text-center space-y-4 mb-12">
-                <span class="text-xs tracking-[0.4em] uppercase text-softGold block">Prenotazione</span>
-                <h2 class="font-serif text-2xl md:text-4xl tracking-wider">Garanta sua Mesa</h2>
-                <p class="text-xs text-creamIvory/60 font-light max-w-md mx-auto">Vagas estritamente limitadas para preservar a exclusividade e a atenção íntima de nossa equipe.</p>
-            </div>
-
-            <form class="space-y-6 text-xs tracking-widest uppercase font-light">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-softGold/80">Nome Completo</label>
-                        <input type="text" class="w-full bg-transparent border-b border-creamIvory/20 focus:border-softGold outline-none py-2 text-sm uppercase text-creamIvory transition-all">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-softGold/80">Telefone / WhatsApp</label>
-                        <input type="tel" class="w-full bg-transparent border-b border-creamIvory/20 focus:border-softGold outline-none py-2 text-sm uppercase text-creamIvory transition-all" placeholder="(46) 99999-0000">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-softGold/80">Data</label>
-                        <input type="date" class="w-full bg-transparent border-b border-creamIvory/20 focus:border-softGold outline-none py-2 text-sm text-creamIvory transition-all">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-softGold/80">Horário</label>
-                        <select class="w-full bg-darkWood border-b border-creamIvory/20 focus:border-softGold outline-none py-2 text-sm text-creamIvory transition-all">
-                            <option>19:30</option>
-                            <option>20:30</option>
-                            <option>21:30</option>
-                            <option>22:00</option>
-                        </select>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-softGold/80">Pessoas</label>
-                        <select class="w-full bg-darkWood border-b border-creamIvory/20 focus:border-softGold outline-none py-2 text-sm text-creamIvory transition-all">
-                            <option>2 Pessoas</option>
-                            <option>4 Pessoas</option>
-                            <option>6 Pessoas</option>
-                            <option>Mais de 6</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="pt-8 text-center">
-                    <button type="submit" class="w-full sm:w-auto bg-softGold text-darkWood hover:bg-creamIvory transition-all duration-500 font-semibold px-12 py-4 tracking-[0.3em]">
-                        Solicitar Reserva
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <section class="grid grid-cols-1 lg:grid-cols-12 bg-darkWood text-creamIvory items-stretch">
-        <div class="lg:col-span-7 relative overflow-hidden min-h-[350px] lg:min-h-0">
-            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="La Bella Italia Room" class="w-full h-full object-cover absolute inset-0 filter brightness-75 scale-105" id="visit-img">
-            <div class="absolute inset-0 bg-gradient-to-r from-darkWood/40 to-darkWood lg:to-transparent"></div>
-        </div>
-
-        <div class="lg:col-span-5 py-20 px-8 md:px-16 flex flex-col justify-center space-y-8 reveal-hidden" id="visit-text">
-            <div class="space-y-2">
-                <span class="text-xs tracking-[0.3em] uppercase text-softGold block">Vieni a Trovarci</span>
-                <h2 class="font-serif text-3xl md:text-4xl tracking-wide">Venha nos Visitar</h2>
-                <div class="w-12 h-[1px] bg-brickBrown mt-4"></div>
-            </div>
-
-            <div class="space-y-6 text-sm font-light leading-relaxed text-creamIvory/80">
-                <div class="flex items-start space-x-4">
-                    <i data-lucide="map-pin" class="text-softGold w-5 h-5 shrink-0 mt-0.5"></i>
-                    <div>
-                        <p class="font-medium text-creamIvory">Endereço Exclusivo</p>
-                        <p>Rua Bispo Dom Carlos, 710</p>
-                        <p>Centro - Palmas, Paraná</p>
-                    </div>
-                </div>
-
-                <div class="flex items-start space-x-4">
-                    <i data-lucide="clock" class="text-softGold w-5 h-5 shrink-0 mt-0.5"></i>
-                    <div>
-                        <p class="font-medium text-creamIvory">Horário de Funcionamento</p>
-                        <p>Segunda a Sábado</p>
-                        <p class="text-softGold">11:30 AM – 1:30 PM</p>
-                        <p class="text-softGold">6:00 PM – 11:00 PM</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-4">
-                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center space-x-3 border border-creamIvory/30 hover:border-softGold hover:text-softGold px-6 py-3.5 text-xs tracking-[0.2em] uppercase font-light transition-all duration-300">
-                    <span>Abrir no Google Maps</span>
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-darkOverlay text-creamIvory/40 py-12 px-6 md:px-16 border-t border-creamIvory/5 text-xs">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-serif text-creamIvory tracking-[0.2em] text-base uppercase">
-                La Bella Italia
-            </div>
-            <div class="flex space-x-6 tracking-widest uppercase text-[10px]">
-                <a href="#" class="hover:text-softGold transition-colors">Privacidade</a>
-                <a href="#" class="hover:text-softGold transition-colors">Termos</a>
-                <a href="#" class="hover:text-softGold transition-colors">Contato</a>
-            </div>
-            <div class="text-center md:text-right tracking-wider font-light">
-                &copy; 2026 La Bella Italia. Todos os direitos reservados. Cultivando a herança clássica.
+            <p>Luxury Italian dining concept in Palmas, Paraná — where heritage becomes atmosphere.</p>
+            <div class="footer-links">
+                <a href="#story">Story</a>
+                <a href="#dishes">Menu</a>
+                <a href="#reservation">Reservations</a>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Register GSAP ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-
-        // --- Custom GSAP Luxury Animations ---
-        
-        // Initial Page Load (Hero Animation)
-        window.addEventListener('load', () => {
-            const tl = gsap.timeline();
-            tl.fromTo("#hero-title", 
-                { opacity: 0, y: 50 }, 
-                { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" }
-            )
-            .fromTo("#hero-subtitle", 
-                { opacity: 0, y: 30 }, 
-                { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 
-                "-=1.0"
-            )
-            .fromTo("#hero-buttons", 
-                { opacity: 0, y: 20 }, 
-                { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 
-                "-=0.8"
-            );
-        });
-
-        // Parallax Effect on Experience Background
-        gsap.to("#parallax-bg", {
-            yPercent: 15,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#experience",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-
-        // Parallax Effect on Visit Us Section Background
-        gsap.to("#visit-img", {
-            yPercent: -10,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#visit-img",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-
-        // Luxury Scroll Reveals for standard content blocks
-        const revealElements = [
-            "#story-text", "#story-img-1", "#story-img-2", 
-            "#dishes-header", "#dish-1", "#dish-2", "#dish-3",
-            "#gallery-info", "#gallery-img-1", "#gallery-img-2",
-            "#reservation-card", "#visit-text"
-        ];
-
-        revealElements.forEach(selector => {
-            if(document.querySelector(selector)) {
-                gsap.fromTo(selector, 
-                    { opacity: 0, y: 45 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1.4,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: selector,
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        }
-                    }
-                );
-            }
-        });
-    </script>
 </body>
 </html>
